@@ -14,8 +14,8 @@ page_config()
 ## Welcome to Streamlit!
 
 Edit `/Home.py` and the files in '/pages' to customize this page to your heart's desire :heart:.
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+If you have any questions, checkout Streamlit [documentation](https://docs.streamlit.io) and the Streamlit [community
+forums](https://discuss.streamlit.io) for help.
 
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
