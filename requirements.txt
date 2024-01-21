@@ -7,3 +7,4 @@ plotly
 altair
 snowflake-connector-python
 lightgbm
+snowflake-snowpark-python
