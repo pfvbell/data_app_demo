@@ -5,3 +5,4 @@ pandas
 statsmodels
 plotly
 altair
+snowflake-connector-python
