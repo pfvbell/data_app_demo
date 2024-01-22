@@ -13,7 +13,7 @@ page_config()
 # Arbor Template Data App
 ## Welcome to Streamlit!
 
-Edit `/Home.py` and the files in '/pages' to customize this page to your heart's desire :heart:.
+Edit `/Home.py` and the files in `/pages.py` to customize this data app to your heart's desire :heart:.
 If you have any questions, checkout Streamlit [documentation](https://docs.streamlit.io) and the Streamlit [community
 forums](https://discuss.streamlit.io) for help.
 
@@ -30,6 +30,7 @@ radius = indices
 x = radius * np.cos(theta)
 y = radius * np.sin(theta)
 
+# Create a DataFrame for the spiral
 df = pd.DataFrame({
     "x": x,
     "y": y,
@@ -37,11 +38,17 @@ df = pd.DataFrame({
     "rand": np.random.randn(num_points),
 })
 
+# Define your custom color scale
+color_scale = alt.Scale(
+    domain=[0, 0.5, 1],
+    range=["#FFA500", "#008000", "#FFFF00"]  # Orange, Green, Yellow
+)
+
 st.altair_chart(alt.Chart(df, height=700, width=700)
     .mark_point(filled=True)
     .encode(
         x=alt.X("x", axis=None),
         y=alt.Y("y", axis=None),
-        color=alt.Color("idx", legend=None, scale=alt.Scale()),
+        color=alt.Color("idx", legend=None, scale=color_scale),
         size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
     ))
